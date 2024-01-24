@@ -4,5 +4,8 @@ include/
 lib/
 pyvenv.cfg
 
+# Python Files
+*.pyc
+
 # VSCode Environment
 .vscode/

@@ -15,11 +15,16 @@ pip install -r requirements.txt
 ```bash
 python sample.py
 ```
+OR
+```bash
+flask --app sample run --debug
+```
 Navigate to http://localhost:5000
 
 ## Built With
 
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/) - The web framework used
+* [Jinja](https://jinja.palletsprojects.com/en/3.1.x/templates/) - Template Designer
 
 ## Authors
 
