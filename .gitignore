@@ -1,0 +1,8 @@
+# Python Environment
+bin/
+include/
+lib/
+pyvenv.cfg
+
+# VSCode Environment
+.vscode/
