@@ -5,7 +5,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return '<h1>Index</h1>'
+    routes = [str(rule) for rule in app.url_map.iter_rules()]
+    routes.pop(0)
+    urls = []
+    for route in routes:
+        paths = route.split('/')
+        path = paths[len(paths) - 1]
+        if path != '' and not path.__contains__('<'):
+            urls.append(path)
+    if len(urls) == 0:
+        urls = None
+    print(urls)
+    return render_template('index.html', urls=urls)
 
 @app.route('/hello')
 @app.route('/hello/<name>')
