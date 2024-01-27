@@ -6,55 +6,40 @@
 {% endblock head %}
 
 {% block body %}
-<div class="table">
-<div>
 <table>
-    <div class="table-row">
-    <div>
     <tr>
-        <div class="table-cell">
-        <div>
         <td>
             <h3>Hostname: </h3>
         </td>
         <td>
             <input type="text" name="hostname">
         </td>
-        </div>
     </tr>
-    </div>
 </table>
-</div>
 
-<div class="button">
-<div>
 <button type="submit" onclick="postHostname()">Submit</button>
-    <div class="javascript">
-    <div>
-    <script>
-        function postHostname() {
-            var hostname = document.querySelector('input[name="hostname"]').value;
-            var data = {
-                "hostname": hostname
-            };
-            var headers = {
-                "Content-Type": "application/json"
-            };
-            fetch('/hostname', {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify(data)
-            })
-            .then(response => response.text())
-            .then(html => {
-                // Display the returned HTML
-                document.body.innerHTML = html;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
-    </div>
-</div>
+<script>
+    function postHostname() {
+        var hostname = document.querySelector('input[name="hostname"]').value;
+        var data = {
+            "hostname": hostname
+        };
+        var headers = {
+            "Content-Type": "application/json"
+        };
+        fetch('/hostname', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then(html => {
+            // Display the returned HTML
+            document.body.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
 {% endblock body %}
