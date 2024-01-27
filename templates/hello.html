@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sample Hello Page</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     <h1>Hello, World!</h1>
     {% if name %}
         <h2>Hello, {{ name }}!</h2>
@@ -11,6 +7,4 @@
         <h2>Hello, Anonymous!</h2>
     {% endif %}
     <p>This is a sample HTML page.</p>
-    <a href="/">Home</a>
-</body>
-</html>
+{% endblock content %}

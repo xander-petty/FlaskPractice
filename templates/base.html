@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    {% block content %}
+
+    {% endblock content %}    
+    <ul>
+        <strong>Menu</strong>
+        {% if urls %}
+            {% for url in urls %}
+                <li><a href="{{ url }}">{{ url }}</a></li>
+            {% endfor %}
+        {% endif %}
+        <li><a href="/">Home</a></li>
+    </ul>
+</body>
+</html>

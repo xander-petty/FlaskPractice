@@ -4,10 +4,10 @@ from flask import request
 from markupsafe import escape
 app = Flask(__name__)
 
-@app.route('/')
-def home():
+def get_routes():
     routes = [str(rule) for rule in app.url_map.iter_rules()]
     routes.pop(0)
+    print(routes)
     urls = []
     for route in routes:
         paths = route.split('/')
@@ -17,24 +17,30 @@ def home():
     if len(urls) == 0:
         urls = None
     print(urls)
+    return urls
+
+@app.route('/')
+def home():
+    urls = get_routes()
     return render_template('index.html', urls=urls)
 
 @app.route('/hostname_form')
 def hostname_form():
-    return render_template('hostname_form.html')
+    urls = get_routes()
+    return render_template('hostname_form.html', urls=urls)
 
 @app.route('/hostname', methods=['POST'])
 def hostname():
-    # hname = request.form['hostname']
+    urls = get_routes()
     hname = request.get_json()['hostname']
     print(f'hostname: {hname}')
-    return render_template('hostname.html', hostname=hname)
+    return render_template('hostname.html', hostname=hname, urls=urls)
 
 @app.route('/hello')
 @app.route('/hello/<name>')
 def hello(name=None):
-    # return '<h1>Hello, World!</h1>'
-    return render_template('hello.html', name=name)
+    urls = get_routes()
+    return render_template('hello.html', name=name, urls=urls)
 
 @app.route('/user/<username>')
 def show_user_profile(username):
