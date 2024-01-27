@@ -1,15 +1,17 @@
 {% extends "base.html" %}
-{% block content %}
+
+{% block head %}
 <title>Hostname Config</title>
-</head>
-<body>
-    <h1>Config</h1>
+{% endblock head %}
+
+{% block content %}
+<h3>Config</h3>
+<div class="code">
+<div>
     <code>
         conf t<br>
         hostname {{ hostname }}<br>
         end<br>
     </code>
-    
-</body>
-</html>
+ </div>
 {% endblock content %}

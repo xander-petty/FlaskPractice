@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Index</title>
+    {% block head %}
+
+    {% endblock head %}
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
+
 <body>
+    <main>
     {% block content %}
 
     {% endblock content %} 
-    <ul>
-        <strong>Menu</strong>
-        {% if urls %}
-            {% for url in urls %}
-                <li><a href="{{ url }}">{{ url }}</a></li>
-            {% endfor %}
-        {% endif %}
-        <li><a href="/">Home</a></li>
-    </ul>
+    </main>
 </body>
+
+<footer>
+<hr>
+    <ol>
+        <strong>Menu</strong>
+        <li><a href="/hostname_form">Hostname Form</a></li>
+        <li><a href="/hello">Hello</a></li>
+        <li><a href="/">Home</a></li>
+    </ol>
+</footer>
+
 </html>

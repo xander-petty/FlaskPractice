@@ -1,10 +1,18 @@
 {% extends "base.html" %}
+
+{% block head %}
+<title>Hello</title>
+{% endblock head %}
+
 {% block content %}
-    <h1>Hello, World!</h1>
-    {% if name %}
-        <h2>Hello, {{ name }}!</h2>
-    {% else %}
-        <h2>Hello, Anonymous!</h2>
-    {% endif %}
-    <p>This is a sample HTML page.</p>
+<h2>Hello, World!</21>
+<div class="message">
+<div>
+{% if name %}
+    <h3>Hello, {{ name }}!</h3>
+{% else %}
+    <h3>Hello, Anonymous!</h3>
+{% endif %}
+</div>
+<p>This is a sample HTML page.</p>
 {% endblock content %}
