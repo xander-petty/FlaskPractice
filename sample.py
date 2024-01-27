@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 from markupsafe import escape
 app = Flask(__name__)
 
@@ -17,6 +18,17 @@ def home():
         urls = None
     print(urls)
     return render_template('index.html', urls=urls)
+
+@app.route('/hostname_form')
+def hostname_form():
+    return render_template('hostname_form.html')
+
+@app.route('/hostname', methods=['POST'])
+def hostname():
+    # hname = request.form['hostname']
+    hname = request.get_json()['hostname']
+    print(f'hostname: {hname}')
+    return render_template('hostname.html', hostname=hname)
 
 @app.route('/hello')
 @app.route('/hello/<name>')

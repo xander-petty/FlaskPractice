@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hostname</title>
+</head>
+<body>
+    <h1>Hostname: </h1><input type="text" name="hostname">
+    <button type="submit" onclick="postHostname()">Submit</button>
+
+    <script>
+        function postHostname() {
+            var hostname = document.querySelector('input[name="hostname"]').value;
+            var data = {
+                "hostname": hostname
+            };
+            var headers = {
+                "Content-Type": "application/json"
+            };
+            fetch('/hostname', {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(html => {
+                // Display the returned HTML
+                document.body.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>
