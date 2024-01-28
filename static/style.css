@@ -1,37 +1,77 @@
+/* Tags */
+:root {
+    --main-bg-color: #f0f0f0;
+    --main-text-color: #000a29;
+    --main-fonts: Arial, sans-serif;
+    --console-fonts: monospace, sans-serif;
+    --menu-bg-color: #000a29;
+    --menu-text-color: #fffafa;
+    --menu-fonts: Arial, sans-serif;
+}
+html {
+    height: 100%;
+}
 body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background-color: var(--main-bg-color);
+    font-family: var(--main-fonts);
+    height: 100%;
+}
+code {
+    padding: 2px;
+    font-family: var(--console-fonts);
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 5vh;
+}
+p {
+    color: black;
+}
+main {
+    height: 95vh;
 }
 
-hr {
-    font-family: Arial, Helvetica, sans-serif;
+/* Table */
+table {
+    border-collapse: collapse;
+}
+table#menu {
+    width: 100%;
+    height: 90%;
+}
+table#menu thead th:nth-child(1) {
+    width: 15%;
+    height: 0%;
+}
+table#menu thead th:nth-child(2) {
+    width: 85%;
+    height: 0%;
 }
 
-ol {
-    list-style-type: none;
-    padding: 0;
+/* div classes */
+.page-header {
+    text-align: center;
 }
-
-li {
-    margin: 5px 0;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
 .message {
     padding: 10px;
 }
-
-code {
-    padding: 2px;
+.menu {
+    background-color: var(--menu-bg-color);
+    color: var(--menu-text-color);
 }
-
-.config {
-    padding: 10px;
-    background-color: #95abf9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.menu#sidemenu {
+    height: 95vh;
+    font-family: var(--menu-fonts);
+    font-size: small;
+}
+.menu#sidemenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }

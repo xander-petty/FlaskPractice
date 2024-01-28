@@ -9,21 +9,41 @@
 </head>
 
 <body>
-    <main>
-    {% block body %}
+    <table id="menu">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
 
-    {% endblock body %} 
-    </main>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="menu" id="sidemenu">
+                        <ul>
+                            <strong>Menu</strong>
+                            <li><a class="menu" href="/hostname_form">Hostname Form</a></li>
+                            <li><a class="menu" href="/hello">Hello</a></li>
+                            <li><a class="menu" href="/">Home</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <main>
+                        {% block body %}
+
+                        {% endblock body %}
+                    </main>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 <footer>
 <hr>
-    <ol>
-        <strong>Menu</strong>
-        <li><a href="/hostname_form">Hostname Form</a></li>
-        <li><a href="/hello">Hello</a></li>
-        <li><a href="/">Home</a></li>
-    </ol>
+<p>Test Project</p>
 </footer>
 
 </html>
