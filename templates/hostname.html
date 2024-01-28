@@ -6,9 +6,14 @@
 
 {% block body %}
 <h3>Config</h3>
-<code>
-    conf t<br>
-    hostname {{ hostname }}<br>
-    end<br>
-</code>
+<div class="code">
+    <code>
+        conf t<br>
+        !<br>
+        hostname {{ hostname }}<br>
+        end<br>
+        !<br>
+        wr
+    </code>
+</div>
 {% endblock body %}

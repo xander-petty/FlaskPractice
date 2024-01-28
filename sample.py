@@ -16,7 +16,7 @@ def get_routes():
             urls.append(path)
     if len(urls) == 0:
         urls = None
-    print(urls)
+    # print(urls)
     return urls
 
 @app.route('/')
@@ -33,7 +33,7 @@ def hostname_form():
 def hostname():
     urls = get_routes()
     hname = request.get_json()['hostname']
-    print(f'hostname: {hname}')
+    # print(f'hostname: {hname}')
     return render_template('hostname.html', hostname=hname, urls=urls)
 
 @app.route('/hello')

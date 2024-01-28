@@ -7,6 +7,8 @@
     --menu-bg-color: #000a29;
     --menu-text-color: #fffafa;
     --menu-fonts: Arial, sans-serif;
+    --code-border-color: #00134b;
+    --console-color: #b8c0ce;
 }
 html {
     height: 100%;
@@ -14,24 +16,25 @@ html {
 body {
     background-color: var(--main-bg-color);
     font-family: var(--main-fonts);
-    height: 100%;
+    height: 90%;
 }
 code {
     padding: 2px;
     font-family: var(--console-fonts);
+    font-size: small;
 }
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 5vh;
+    height: 4%;
 }
 p {
     color: black;
 }
 main {
-    height: 95vh;
+    height: 100%;
 }
 
 /* Table */
@@ -40,7 +43,7 @@ table {
 }
 table#menu {
     width: 100%;
-    height: 90%;
+    height: 100%;
 }
 table#menu thead th:nth-child(1) {
     width: 15%;
@@ -63,7 +66,7 @@ table#menu thead th:nth-child(2) {
     color: var(--menu-text-color);
 }
 .menu#sidemenu {
-    height: 95vh;
+    height: 93vh;
     font-family: var(--menu-fonts);
     font-size: small;
 }
@@ -74,4 +77,9 @@ table#menu thead th:nth-child(2) {
     width: 100%;
     height: 100%;
     overflow: auto;
+}
+.code {
+    border: var(--code-border-color);
+    border-style: solid;
+    background-color: var(--console-color);
 }
